@@ -37,3 +37,13 @@ body
 	background-color: #512DA8;
 	!background-color: #0000A8;
 }
+html{
+	scroll-behavior:all;
+}
+.tab-content
+{
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd; 
+	border-bottom:1px solid #ddd;
+	padding: 10px;
+}
