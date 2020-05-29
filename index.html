@@ -32,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal" href="">
+                    <a  id="loginButton" data-toggle="modal" href="">
                         <span class="fa fa-sign-in">Login</span>
                     </a>
                 </span>
@@ -47,7 +47,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="close2">
                         &times;
                     </button>
                 </div>
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="close22">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -84,7 +84,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="close1">
                         &times;
                     </button>
                 </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="form-group row">
                                 <div class="col-12 col-sm-1 offset-md-2">
-                                <button type="submit" class="btn btn-secondary mr-3" data-dismiss="modal" >
+                                <button type="submit" class="btn btn-secondary mr-3" id="close11" >
                                    Cancel
                                 </button>
                                 </div>
@@ -171,7 +171,7 @@
                 <div class="form-group col-sm-3 align-self-center">
                     <div class="col-sm-12">
                         <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-target="#reserveform" data-toggle="modal">Reserve Table</a>                         
+                        id="ReserveButton">Reserve Table</a>                         
                         </div>                        
                     </div>
             </div>
@@ -317,10 +317,9 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
+     <script>
         $(document).ready(function()
-        {
-            $("#mycarousel").carousel({interval:2000});
+        {   $("#mycarousel").carousel({interval:2000});
             $("#carouselButton").click(function(){
                if($("#carouselButton").children("span").hasClass("fa-pause")){
                 $("#mycarousel").carousel("pause");
@@ -332,6 +331,25 @@
                 $("#carouselButton").children("span").removeClass("fa-play");
                 $("#carouselButton").children("span").addClass("fa-pause");
                }
+            });
+            $("#ReserveButton").click(function(){
+                $("#reserveform").modal("show");
+                $("#reserveform").modal("toggle");
+            });
+            $("#loginButton").click(function(){
+                $("#loginModal").modal("show");
+            });
+            $("#close1").click(function(){
+                $("#reserveform").modal("hide");
+            });
+            $("#close11").click(function(){
+                $("#reserveform").modal("hide");
+            });
+            $("#close2").click(function(){
+                $("#loginModal").modal("hide");
+            });
+            $("#close22").click(function(){
+                $("#loginModal").modal("hide");
             });
 
         });
